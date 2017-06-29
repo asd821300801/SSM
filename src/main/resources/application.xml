@@ -11,7 +11,7 @@
      http://www.springframework.org/schema/tx
      http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 	<!-- 只扫描service -->
-	<context:component-scan base-package="com.mashen,com.lingdu.*.*">
+	<context:component-scan base-package="com.lingdu.*.*">
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Service" />
 		<context:exclude-filter type="annotation"
@@ -70,7 +70,7 @@
 		以上的DataSource,那么自动装配可能会失效，可以指定sqlSessionFactoryName，多个包逗号分隔 -->
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.lingdu.*.dao,com.mashen.tms.*.dao,com.mashensoft.*.dao,com.mashen.role.*.dao" />
+		<property name="basePackage" value="com.lingdu.*.dao" />
 	</bean>
  
 

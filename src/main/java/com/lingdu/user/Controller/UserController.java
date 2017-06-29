@@ -1,4 +1,4 @@
-package com.mashen.login;
+package com.lingdu.user.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,14 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.lingdu.user.service.UserService;
 
 @Controller
-@RequestMapping("/login")
-public class LoginController {
+@RequestMapping("/user")
+public class UserController {
 	@Autowired
 	private UserService service;
 	
-	@RequestMapping("/getUser")
+	@RequestMapping("/index")
 	public String getUser(ModelMap map){
-		map.addAttribute("user", service.getUser(72));
+		map.addAttribute("user", service.getUser(1));
 		return "index";
+		//访问地址：http://localhost:8080/ssm/user/index.action
 	}
 }
